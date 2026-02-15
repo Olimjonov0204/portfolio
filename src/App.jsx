@@ -27,7 +27,9 @@ const PROJECTS = [
 const CV_PATH = "/public/cv.docx";
 
 export default function App() {
-  const [theme, setTheme] = useState(() => localStorage.getItem("theme") || "dark");
+  const [theme, setTheme] = useState(
+    () => localStorage.getItem("theme") || "dark"
+  );
 
   useEffect(() => {
     document.documentElement.setAttribute("data-theme", theme);
@@ -41,19 +43,34 @@ export default function App() {
           <div className="brand">Otabek Olimjonov</div>
 
           <div className="links">
-            <a className="btn" href="#projects">Projects</a>
-            <a className="btn" href="#skills">Skills</a>
-            <a className="btn" href="#contact">Contact</a>
+            <a className="btn" href="#projects">
+              Projects
+            </a>
+            <a className="btn" href="#skills">
+              Skills
+            </a>
+            <a className="btn" href="#contact">
+              Contact
+            </a>
 
-            <a className="btn" href={CV_PATH} download>
+            <a className="btn" href={`/cv.docx?v=${Date.now()}`} download>
               Download CV
             </a>
 
-            <button className="btn" type="button" onClick={() => setTheme(t => t === "dark" ? "light" : "dark")}>
+            <button
+              className="btn"
+              type="button"
+              onClick={() => setTheme((t) => (t === "dark" ? "light" : "dark"))}
+            >
               {theme === "dark" ? "Light" : "Dark"}
             </button>
 
-            <a className="btn" href="https://github.com/Olimjonov0204" target="_blank" rel="noreferrer">
+            <a
+              className="btn"
+              href="https://github.com/Olimjonov0204"
+              target="_blank"
+              rel="noreferrer"
+            >
               GitHub
             </a>
           </div>
@@ -63,16 +80,17 @@ export default function App() {
       <div className="container hero">
         <h1 className="h-title">Frontend Developer (React)</h1>
         <p className="h-sub">
-          I build responsive web applications using React, JavaScript, and modern UI practices.
-          Below are my projects with live demos and source code.
+          I build responsive web applications using React, JavaScript, and
+          modern UI practices. Below are my projects with live demos and source
+          code.
         </p>
 
         <div className="grid">
           <div className="card">
             <div className="sec-title">About</div>
             <p className="small">
-              I'm a junior frontend developer focused on React. I enjoy building clean UI,
-              working with APIs, and improving user experience.
+              I'm a junior frontend developer focused on React. I enjoy building
+              clean UI, working with APIs, and improving user experience.
             </p>
             <div className="badges">
               <span className="badge">React</span>
@@ -96,7 +114,8 @@ export default function App() {
               <span className="badge">Git</span>
             </div>
             <p className="small" style={{ marginTop: 10 }}>
-              Currently improving: TypeScript, React Router, performance optimization.
+              Currently improving: TypeScript, React Router, performance
+              optimization.
             </p>
           </div>
         </div>
@@ -111,12 +130,30 @@ export default function App() {
               <p className="p-desc">{p.desc}</p>
 
               <div className="badges">
-                {p.tech.map((t) => <span className="badge" key={t}>{t}</span>)}
+                {p.tech.map((t) => (
+                  <span className="badge" key={t}>
+                    {t}
+                  </span>
+                ))}
               </div>
 
               <div className="p-actions">
-                <a className="btn" href={p.live} target="_blank" rel="noreferrer">Live</a>
-                <a className="btn" href={p.github} target="_blank" rel="noreferrer">Code</a>
+                <a
+                  className="btn"
+                  href={p.live}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Live
+                </a>
+                <a
+                  className="btn"
+                  href={p.github}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Code
+                </a>
               </div>
             </div>
           ))}
@@ -127,7 +164,8 @@ export default function App() {
         <h2 className="sec-title">Contact</h2>
         <div className="card">
           <p className="small" style={{ margin: 0 }}>
-            Email: <b>olimjonovotabek747@gmail.com</b><br/>
+            Email: <b>olimjonovotabek747@gmail.com</b>
+            <br />
             Telegram: <b>@obidjonov1ch</b>
           </p>
         </div>
