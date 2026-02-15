@@ -24,8 +24,7 @@ const PROJECTS = [
   },
 ];
 
-// public/ ichidagi pdf nomi EXACT bo‘lsin
-const CV_PATH = "/Olimjonov Otabek Resume.docx";
+const CV_PATH = "/public/Olimjonov_Otabek_Resume.docx";
 
 export default function App() {
   const [theme, setTheme] = useState(() => localStorage.getItem("theme") || "dark");
