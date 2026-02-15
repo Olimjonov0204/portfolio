@@ -24,7 +24,7 @@ const PROJECTS = [
   },
 ];
 
-const CV_PATH = "/public/Olimjonov_Otabek_Resume.docx";
+const CV_PATH = "../public/cv.docx";
 
 export default function App() {
   const [theme, setTheme] = useState(() => localStorage.getItem("theme") || "dark");
