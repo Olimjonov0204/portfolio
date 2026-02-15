@@ -1,0 +1,76 @@
+:root{
+    --bg: #0b1220;
+    --text: #e8eefc;
+    --card: rgba(255,255,255,.06);
+    --border: rgba(255,255,255,.12);
+    --nav: rgba(11,18,32,.75);
+  
+    --btn-bg: rgba(255,255,255,.06);
+    --btn-border: rgba(255,255,255,.14);
+  
+    font-family: system-ui, Arial;
+  }
+  
+  [data-theme="light"]{
+    --bg: #f6f7fb;
+    --text: #0b1220;
+    --card: rgba(0,0,0,.04);
+    --border: rgba(0,0,0,.10);
+    --nav: rgba(246,247,251,.75);
+  
+    --btn-bg: rgba(0,0,0,.04);
+    --btn-border: rgba(0,0,0,.12);
+  }
+  
+  *{ box-sizing: border-box; }
+  
+  body { margin: 0; background: var(--bg); color: var(--text); }
+  a { color: inherit; text-decoration: none; }
+  
+  .container { max-width: 1100px; margin: 0 auto; padding: 0 16px; }
+  
+  .nav {
+    position: sticky;
+    top: 0;
+    backdrop-filter: blur(10px);
+    background: var(--nav);
+    border-bottom: 1px solid rgba(255,255,255,.08);
+  }
+  .nav-inner { display:flex; align-items:center; justify-content:space-between; padding: 14px 0; gap: 10px; }
+  .brand { font-weight: 900; letter-spacing: .4px; }
+  .links { display:flex; gap: 12px; flex-wrap: wrap; }
+  
+  .btn{
+    display:inline-block;
+    padding: 10px 12px;
+    border-radius: 12px;
+    border: 1px solid var(--btn-border);
+    background: var(--btn-bg);
+    cursor: pointer;
+  }
+  
+  .hero { padding: 44px 0 18px; }
+  .h-title { font-size: 38px; margin: 0; }
+  .h-sub { opacity: .85; margin: 10px 0 0; max-width: 760px; line-height: 1.55; }
+  
+  .grid { display:grid; grid-template-columns: 1.2fr .8fr; gap: 14px; margin-top: 18px; }
+  @media (max-width: 900px){ .grid { grid-template-columns: 1fr; } .h-title{font-size:32px;} }
+  
+  .card { border: 1px solid var(--border); background: var(--card); border-radius: 18px; padding: 14px; }
+  
+  .badges { display:flex; gap: 8px; flex-wrap: wrap; margin-top: 10px; }
+  .badge { padding: 6px 10px; border-radius: 999px; border: 1px solid var(--btn-border); background: rgba(0,0,0,.12); font-size: 13px; }
+  
+  .section { padding: 26px 0; }
+  .sec-title { font-size: 22px; margin: 0 0 10px; }
+  
+  .projects { display:grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+  @media (max-width: 900px){ .projects{ grid-template-columns: 1fr; } }
+  
+  .p-title { font-weight: 900; margin: 0 0 6px; }
+  .p-desc { opacity: .85; line-height: 1.5; margin: 0; }
+  .p-actions { display:flex; gap: 10px; margin-top: 12px; flex-wrap: wrap; }
+  
+  .small { opacity: .82; font-size: 14px; line-height: 1.6; }
+  .footer { padding: 24px 0 40px; opacity: .75; }
+  

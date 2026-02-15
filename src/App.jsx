@@ -1,3 +1,5 @@
+import { useEffect, useState } from "react";
+
 const PROJECTS = [
   {
     title: "Task Manager",
@@ -22,17 +24,39 @@ const PROJECTS = [
   },
 ];
 
+// public/ ichidagi pdf nomi EXACT bo‘lsin
+const CV_PATH = "/Otabek_Olimjonov_CV.pdf";
+
 export default function App() {
+  const [theme, setTheme] = useState(() => localStorage.getItem("theme") || "dark");
+
+  useEffect(() => {
+    document.documentElement.setAttribute("data-theme", theme);
+    localStorage.setItem("theme", theme);
+  }, [theme]);
+
   return (
     <>
       <div className="nav">
         <div className="container nav-inner">
           <div className="brand">Otabek Olimjonov</div>
+
           <div className="links">
             <a className="btn" href="#projects">Projects</a>
             <a className="btn" href="#skills">Skills</a>
             <a className="btn" href="#contact">Contact</a>
-            <a className="btn" href="https://github.com/Olimjonov0204" target="_blank" rel="noreferrer">GitHub</a>
+
+            <a className="btn" href={CV_PATH} download>
+              Download CV
+            </a>
+
+            <button className="btn" type="button" onClick={() => setTheme(t => t === "dark" ? "light" : "dark")}>
+              {theme === "dark" ? "Light" : "Dark"}
+            </button>
+
+            <a className="btn" href="https://github.com/Olimjonov0204" target="_blank" rel="noreferrer">
+              GitHub
+            </a>
           </div>
         </div>
       </div>
@@ -88,9 +112,7 @@ export default function App() {
               <p className="p-desc">{p.desc}</p>
 
               <div className="badges">
-                {p.tech.map((t) => (
-                  <span className="badge" key={t}>{t}</span>
-                ))}
+                {p.tech.map((t) => <span className="badge" key={t}>{t}</span>)}
               </div>
 
               <div className="p-actions">
