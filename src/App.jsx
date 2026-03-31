@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-
 const PROJECTS = [
   {
     title: "Task Manager",
