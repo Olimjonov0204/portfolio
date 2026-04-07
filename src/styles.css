@@ -278,18 +278,15 @@ input:focus, textarea:focus{
   --border: rgba(0,0,0,0.1);
 }
 
-/* body ham o'zgarsin */
 :root[data-theme="light"] body{
   background: var(--bg);
   color: var(--text);
 }
 
-/* navbar light mode */
 :root[data-theme="light"] .nav{
   background: rgba(255,255,255,0.7);
 }
 
-/* inputlar */
 :root[data-theme="light"] input,
 :root[data-theme="light"] textarea{
   background: rgba(0,0,0,0.03);
